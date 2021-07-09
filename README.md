@@ -18,6 +18,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+## Required Output 
+![MicrosoftTeams-image (1)](https://user-images.githubusercontent.com/86652218/125080853-f1451800-e0e2-11eb-820c-87a381778300.png)
+![MicrosoftTeams-image (2)](https://user-images.githubusercontent.com/86652218/125080850-f013eb00-e0e2-11eb-8da8-fece0929b260.png)
+
+## Practical Output 
+![final-touch](https://user-images.githubusercontent.com/86652218/125080962-15085e00-e0e3-11eb-82e7-a5330f2fa2d8.png)
+
+
+
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
