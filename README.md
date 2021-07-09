@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### In OpenInv1.js file Main Code for required Page is there...
+
 ### `npm start`
 
 Runs the app in the development mode.\
