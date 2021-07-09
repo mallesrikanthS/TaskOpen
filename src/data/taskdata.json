@@ -1,0 +1,274 @@
+{
+    "Arrow1": [
+        {
+            "Arval":"Assets",
+            "key": "A1",
+            "Lkey": "LA1",
+            "Rkey": "RA1",
+            "step1":[
+                {
+                    "arr1":"Cash and Cash Equivalents",
+                    "key": "A1D1",
+                    "LAD": "LA1D1",
+                    "RAD": "RA1D1",
+                    "Rdata":[
+                        {
+                            "rd":"Cash",
+                            "DL": "L1D1",
+                            "DR": "R1D1"
+                        },
+                        {
+                            "rd":"Retail Merchant Bank",
+                            "DL": "L1D2",
+                            "DR": "R1D2"
+                        }
+                    ]
+                },
+                {
+                    "arr1":"Other Current Assets",
+                    "key": "A1D2",
+                    "LAD": "LA1D2",
+                    "RAD": "RA1D2",
+                    "Rdata":[
+                        {
+                            "rd":"Input IGST",
+                            "DL": "L2D1",
+                            "DR": "R2D1"
+                        },
+                        {
+                            "rd":"Input CGST",
+                            "DL": "L2D2",
+                            "DR": "R2D2"
+                        },
+                        {
+                            "rd":"Input SGST",
+                            "DL": "L2D3",
+                            "DR": "R2D3"
+                        },
+                        {
+                            "rd":"Input Cess",
+                            "DL": "L2D4",
+                            "DR": "R2D4"
+                        },
+                        {
+                            "rd":"Input IGST Deferred (RCM)",
+                            "DL": "L2D5",
+                            "DR": "R2D5"
+                        },
+                        {
+                            "rd":"Input CGST Deferred (RCM)",
+                            "DL": "L2D6",
+                            "DR": "R2D6"
+                        },
+                        {
+                            "rd":"Input SGST Deferred (RCM)",
+                            "DL": "L2D7",
+                            "DR": "R2D7"
+                        },
+                        {
+                            "rd":"Input Cess Deferred (RCM)",
+                            "DL": "L2D8",
+                            "DR": "R2D8"
+                        },
+                        {
+                            "rd":"GST on Advance Receipt",
+                            "DL": "L2D9",
+                            "DR": "R2D9"
+                        },
+                        {
+                            "rd":"GST on Advance Payment",
+                            "DL": "L2D10",
+                            "DR": "R2D10"
+                        }
+                    ]
+                },
+                {
+                    "arr1":"Inventories",
+                    "key": "A1D3",
+                    "LAD": "LA1D3",
+                    "RAD": "RA1D3",
+                    "Rdata":[
+                        {
+                            "rd":"Inventory",
+                            "DL": "L3D1",
+                            "DR": "R3D1"
+                        }
+                    ]
+                },
+                {
+                    "arr1":"Other Current Assets(TDS)",
+                    "key": "A1D4",
+                    "LAD": "LA1D4",
+                    "RAD": "RA1D4",
+                    "Rdata":[
+                        {
+                            "rd":"TDS Receivable on Dividends(Sec.194)",
+                            "DL": "L4D1",
+                            "DR": "R4D1"
+                        },
+                        {
+                            "rd":"TDS Receivable on Interest(Sec.194A)",
+                            "DL": "L4D2",
+                            "DR": "R4D2"
+                        },
+                        {
+                            "rd":"TDS Receivable on Contract(Sec.194C)",
+                            "DL": "L4D3",
+                            "DR": "R4D3"
+                        },
+                        {
+                            "rd":"TDS Receivable on Rent(Sec.194I)",
+                            "DL": "L4D4",
+                            "DR": "R4D4"
+                        },                    
+                        {
+                            "rd":"TDS Rec on Interest on Securities (Sec.193)",
+                            "DL": "L4D5",
+                            "DR": "R4D5"
+                        },
+                        {
+                            "rd":"TDS Payable on dividends (Sec.194)",
+                            "DL": "L4D6",
+                            "DR": "R4D6"
+                        },
+                        {
+                            "rd":"TDS Payable on Interest on Securities (Sec.193)",
+                            "DL": "L4D7",
+                            "DR": "R4D7"
+                        },
+                        {
+                            "rd":"TDS Payable on Interest (Sec. 193)",
+                            "DL": "L4D8",
+                            "DR": "R4D8"
+                        },
+                        {
+                            "rd":"TDS Payable on Contract (Sec.194C)",
+                            "DL": "L4D9",
+                            "DR": "R4D9"
+                        },
+                        {
+                            "rd":"TDS Payable on Rent (Sec.194I)",
+                            "DL": "L4D10",
+                            "DR": "R4D10"
+                        },
+                        {
+                            "rd":"TDS Payable on Professional/TechnicalFees (Sec.194J)",
+                            "DL": "L4D11",
+                            "DR": "R4D11"
+                        }
+                    ]
+                },
+                {
+                    "arr1":"Trade Payables",
+                    "key": "A1D5",
+                    "LAD": "LA1D5",
+                    "RAD": "RA1D5",
+                    "Rdata":[
+                        {
+                            "rd":"QWERT",
+                            "DL": "L5D1",
+                            "DR": "R5D1"
+                        },
+                        {
+                            "rd":"First Supplier",
+                            "DL": "L5D2",
+                            "DR": "R5D2"
+                        }
+                     
+                    ]
+                }
+            
+            ]
+        },
+
+
+        {
+            "Arval":"Expenses",
+            "key": "A2",
+            "Lkey": "LA2",
+            "Rkey": "RA2",
+            "step1":[
+                {
+                    "arr1":"Purchases of Stock-in-Trade",
+                    "key": "A2D1",
+                    "LAD": "LA2D1",
+                    "RAD": "RA2D1",
+                    "Rdata":[
+                        {
+                            "rd":"Purchases",
+                            "DL": "AL1D1",
+                            "DR": "AR1D1"
+                        }
+                    ]
+                },
+                {
+                    "arr1":"Other Expense(Direct)",
+                    "key": "A2D2",
+                    "LAD": "LA2D2",
+                    "RAD": "RA2D2",
+                    "Rdata":[
+                        {
+                            "rd":"Additional Charges on Import",
+                            "DL": "AL2D1",
+                            "DR": "AR2D1"
+                        },
+                        {
+                            "rd":"Discount Allowed",
+                            "DL": "AL2D2",
+                            "DR": "AR2D2"
+                        },
+                        {
+                            "rd":"GST Expense",
+                            "DL": "AL2D3",
+                            "DR": "AR2D3"
+                        },
+                        {
+                            "rd":"Freight",
+                            "DL": "AL2D4",
+                            "DR": "AR2D4"
+                        },
+                        {
+                            "rd":"Discount Allowed",
+                            "DL": "AL2D5",
+                            "DR": "AR2D5"
+                        }
+                    ]
+                },
+                {
+                    "arr1":"Other Expense(Indirect)",
+                    "key": "A2D3",
+                    "LAD": "LA2D3",
+                    "RAD": "RA2D3",
+                    "Rdata":[
+                        {
+                            "rd":"Roundoff",
+                            "DL": "AL3D1",
+                            "DR": "AR3D1"
+                        },
+                        {
+                            "rd":"Roundoff",
+                            "DL": "AL3D2",
+                            "DR": "AR3D2"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "Arval":"Equity",
+            "key": "A3",
+            "Lkey": "LA3",
+            "Rkey": "RA3",
+            "step1":[
+                {
+                    "arr1":"Reserves & Surplus",
+                    "key": "A3D1",
+                    "LAD": "LA3D1",
+                    "RAD": "RA3D1"
+                }
+            ]
+        }            
+        
+    ]
+}

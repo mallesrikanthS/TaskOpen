@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import OpenInv1 from './components/OpenInv1';
+import OpenInv from './components/OpenInv';
+
+import OpenTab from './components/OpenTab';
+import Try from './components/Try';
+import Dat from './components/Dat';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <OpenInv1 />
+      </div>
+      
     </div>
   );
 }

@@ -1,0 +1,133 @@
+
+
+table {
+    position: sticky;
+    z-index: 9;
+    
+}
+#topp {
+    margin-left: 10px;
+    margin-top: 15px;
+}
+#ht1 {
+    position: sticky;
+    column-width: 280px;   
+}
+#ht2 {
+    position: sticky;
+    column-width: 120px;   
+}
+th{
+    border:1px solid #000;
+    border-collapse: collapse;
+    background-color:rgb(243, 241, 230);
+    
+}
+td{
+    text-align: left;
+    margin: 4px;
+    padding: 2px;
+    
+}
+
+table,td,th ,tr{
+    border:1px solid #000;
+    border-collapse: collapse; 
+    
+           
+}
+input{
+    width:100%;
+    border: none;
+    outline:none;
+    
+}
+.a1{
+    color: #177;
+    size:1px;
+    text-align: 'left';
+}
+#but{  
+    color: #145;
+    background-color: #fff;
+    text-align: center;
+    border:none;
+    padding-inline-start: 15px;
+}
+#but1{  
+    color: #145;
+    background-color: #fff;
+    text-align: center;
+    border:none;
+    padding-inline-start: 30px;
+}
+#nbut{  
+    text-align: left;
+    padding-inline-start: 70px;
+    
+}
+
+#nva {
+    background-color: rgb(13, 78, 78);
+    height: 60px;
+}
+#da1 {
+    background-color: rgb(239, 243, 245);
+    height: 550px;
+}
+#hq1 {
+    text-align: left;
+    font-size: 1.75em;
+    color: aqua;
+    
+}
+#hq2 {
+    text-align: left;
+    font-size: 1.5em;
+    color: #fff;
+    vertical-align: middle;
+}
+#idt {
+    width:20%;
+    background-color: rgb(245, 245, 250);
+}
+#op {
+    width:20%;
+}
+#dat {
+    width:80%;
+    text-align: left;
+}
+#tb {
+    text-align: left;
+    background-color: rgb(241, 245, 247);
+    color: black;
+    width:23%;
+    margin-left: 152px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 3px;
+    
+}
+#tc {
+    text-align: left;
+    background-color: rgb(241, 245, 247);
+    width: 23%;
+    color: black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 25px;
+    padding: 3px;
+}
+#iss{  
+    color: #145;
+    background-color: rgb(243, 250, 243);
+    text-align: center;
+    border:1px solid grey;
+    border-radius: 5px;
+    padding-inline-start: 4px;
+
+}
+#icn {
+    margin:2px;
+}
