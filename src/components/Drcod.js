@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Icon } from '@fluentui/react/lib/Icon';
+
 import taskdata from '../data/taskdata.json';
 import './App.css';
 import Recod from './Recod';
@@ -14,7 +16,9 @@ class Drcod extends Component {
             return(
             <>
             <tr key={id}>
-                <td><button id='but1' onClick= {()=> this.props.func(st.key)} ><i class="bi bi-arrow-down-square-fill"></i></button> {st.arr1}</td>
+                <td><button id='but1' onClick= {()=> this.props.func(st.key)} >
+                    <Icon iconName="DrillDownSolid" />
+                    </button> {st.arr1}</td>
                 <td><input type='text'  name={st.LAD} onChange={(e)=> this.props.handleChange(e)} /></td>
                 <td><input type='text'  name={st.RAD} onChange={(e)=> this.props.handleChange(e)} /></td>
             </tr>

@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { Icon } from '@fluentui/react/lib/Icon';
-import { IconButton } from '@fluentui/react/lib/Button';
-
-
 import taskdata from '../data/taskdata.json';
 import './App.css';
+
 import Recod from './Recod';
 import Drcod from './Drcod';
 import Drcod1 from './Drcod1';
 import Drcod2 from './Drcod2';
 
-const MyIcon = () => <Icon iconName="DrillDownSolid" />;
-
-class OpenInv1 extends Component {
+class Addtest extends Component {
     constructor(){
         super()
         this.state= {
+            var: [
+                {A1:false},{A2:false},{A3:false}
+            ],
             A1:false,A2:false,A3:false,
             A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
             A2D1:false,A2D2:false,A2D3:false,
+
 
             LA1:'0',LA2:'0',LA3:'0',
             LA1D1:'0',LA1D2:'0',LA1D3:'0',LA1D4:'0',LA1D5:'0',
@@ -93,8 +92,13 @@ class OpenInv1 extends Component {
         this.setState({[nam]: val});
     }
 
+    hided = (name)=> {
+        console.log('before', name);
+        this.setState({[name]: !name});
+    }
 
     render(){
+        
         //console.log(taskdata.Arrow1);
         let left_total = parseFloat(this.state.LA1)+parseFloat(this.state.LA2)+parseFloat(this.state.LA3)+
         parseFloat(this.state.LA1D1)+parseFloat(this.state.LA1D2)+parseFloat(this.state.LA1D3)+
@@ -134,7 +138,7 @@ class OpenInv1 extends Component {
 
         left_total = left_total.toFixed(2);
         right_total = right_total.toFixed(2);
-        //console.log(left_total,right_total);
+        console.log(left_total,right_total);
         return(
             <>
             <div>
@@ -162,19 +166,17 @@ class OpenInv1 extends Component {
                         <h4>Opening Balance</h4>
                         </div>
                         <div className='row'>
-                            <div className='col-3' id='op'>
-                            <span>Opening Balance Date</span>
-                            </div>
-                            <div className='col-4' id='dat'>
-                            <input id='idt' type='date' />
-                            </div>
+                        <div className='col-2' id='op'>
+                        <span>Opening Balance Date</span>
+                        </div>
+                        <div className='col-4' id='dat'>
+                        <input id='idt' type='date' />
+                        </div>
 
                         </div>
 
                         <div className='row' id='topp'>
-                        
-                        <div className='col-12'>
-                        <table >
+                        <table  >
                         <tr >
                             <th id='ht1' >Account Name</th>                           
                             <th id='ht2' >Debit</th>
@@ -190,7 +192,7 @@ class OpenInv1 extends Component {
                                 <tr >
                                     <td id='ht1'>
                                         <button id='but' name={dt.key} onClick= {()=> this.hideComponent(dt.key)} >
-                                        <Icon iconName="DrillDownSolid" />
+                                        <i class="bi bi-arrow-down-square-fill"></i>
                                         </button>{dt.Arval}</td>
                                     <td id='ht2'>
                                     <input type='text'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
@@ -214,7 +216,7 @@ class OpenInv1 extends Component {
                                 <tr>
                                     <td>
                                         <button id='but' onClick= {()=> this.hideComponent(dt.key)} >
-                                        <Icon iconName="DrillDownSolid" />
+                                        <i class="bi bi-arrow-down-square-fill"></i>
                                         </button>{dt.Arval}</td>
                                     <td>
                                     <input type='text'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
@@ -238,7 +240,7 @@ class OpenInv1 extends Component {
                             <tr>
                                 <td>
                                     <button id='but' onClick= {()=> this.hideComponent(dt.key)} >
-                                    <Icon iconName="DrillDownSolid" />
+                                    <i class="bi bi-arrow-down-square-fill"></i>
                                     </button>{dt.Arval}</td>
                                 <td>
                                 <input type='text'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
@@ -268,17 +270,15 @@ class OpenInv1 extends Component {
                         
                         
                         </table>
-                        </div>
-                        
                     </div>
 
                     <div >
                         <div className='row'>
                         <div className='col-4'></div>
-                        <div className='' id='tb'>
+                        <div className='col-4 offset-4' id='tb'>
                             <span> Total Debit Amount : {left_total}</span>
                         </div>
-                        <div className='' id='tc'>
+                        <div className='col-4' id='tc'>
                             <span> Total Credit Amount : {right_total}</span>
                         </div>
                         </div>
@@ -287,8 +287,7 @@ class OpenInv1 extends Component {
 
                     <div>
                         <div>
-                            <button id='iss'><Icon class='iss' iconName="Lifesaver" />Save</button>
-                                                        
+                            <button id='iss'><i id='icn' class="bi bi-life-preserver"></i>Save</button>
                         </div>
                     </div>
                 </div>
@@ -306,4 +305,4 @@ class OpenInv1 extends Component {
         );
     }
 }
-export default OpenInv1;
+export default Addtest;

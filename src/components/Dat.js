@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+
 
 
 class Dat extends Component {
@@ -9,7 +8,6 @@ class Dat extends Component {
         return (
             <>
             <div>
-            <div> <DatePicker  maxDate={new Date()} /> </div>
 
             </div>
             </>
