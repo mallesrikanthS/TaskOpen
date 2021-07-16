@@ -16,12 +16,9 @@ class OpenInv1 extends Component {
     constructor(){
         super()
         this.state= {
-            
-            arwval: {
-                A1:false,A2:false,A3:false,
-                A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
-                A2D1:false,A2D2:false,A2D3:false
-            },
+            A1:false,A2:false,A3:false,
+            A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
+            A2D1:false,A2D2:false,A2D3:false,
 
             lval: {
                 LA1:'0',LA2:'0',LA3:'0',
@@ -60,23 +57,7 @@ class OpenInv1 extends Component {
     }
 
     hideComponent = (name)=> {
-        console.log(name);
-
-        for (var idx in this.state.arwval) {
-            if(name === idx ){    
-                this.setState(prevState => ({
-                    arwval: {
-                        ...prevState.arwval,           // copy all other key-value pairs of ls object
-                        [name]: !this.state.arwval[name]      
-                        // make sure use name in both sides or else it willn't update
-                      }
-                  })
-                )
-                console.log('check update of arwval',name, idx,this.state.arwval[idx],this.state.arwval);
-            }
-        }; 
-       
-
+        //console.log(name);
         if (name=== 'A1'){
             this.setState({A1: !this.state.A1});
         }        
@@ -110,7 +91,6 @@ class OpenInv1 extends Component {
         else if (name==='A2D3') {
             this.setState({A2D3: !this.state.A2D3});
         }
-        console.log('before hidecomp', name, this.state);
     }
 
    /* handcredit = ()=> {
@@ -143,7 +123,7 @@ class OpenInv1 extends Component {
           }))
 
         //this.setState({ ...this.state.ls, [nam]: val});        //its not working
-       // console.log( 'input',nam,val,this.state );
+        console.log( 'input',nam,val,this.state );
     }
 
     handleRChange = (e)=> {
@@ -159,13 +139,12 @@ class OpenInv1 extends Component {
           }))
 
         //this.setState({ ...this.state.ls, [nam]: val});        //its not working
-       // console.log( 'input',nam,val,this.state );
+        console.log( 'input',nam,val,this.state );
     }
 
 
     render(){
         //console.log(taskdata.Arrow1);
-        console.log('after hidecomp', this.state);
 
         //let sample = { a: 1 , b: 2 , c:3 };
         let lsum = 0;
@@ -178,10 +157,10 @@ class OpenInv1 extends Component {
             }
             else {
                 lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
-                //console.log('norm_sum', lsum);
+                console.log('norm_sum', lsum);
             }
             //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
-            //console.log('first-key' ,key,lsum)
+            console.log('first-key' ,key,lsum)
         };
 
         // Credit - total
@@ -192,7 +171,7 @@ class OpenInv1 extends Component {
             }
             else {
                 rsum = parseFloat(rsum) + parseFloat(this.state.rval[id]);
-               // console.log('norm_rsum', rsum);
+                console.log('norm_rsum', rsum);
             }
             //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
             //console.log('first' ,key,lsum)
@@ -252,73 +231,37 @@ class OpenInv1 extends Component {
                         {taskdata.Arrow1.map((dt)=>{
                         return(
                             <>
-                            {(
-                                ()=> {
-                                    let posts = [];
-                                    let daq = [];
-
-                                    for (var id in this.state.arwval) {
-                    
-                                        if (dt.key=== id) {
-                                            posts.push(
-                                                <tr >
-                                            <td id='ht1'>
-                                                <button id='but' name={dt.key} onClick= {()=> this.hideComponent(dt.key)} >
-                                                <Icon iconName="DrillDownSolid" />
-                                                </button>{dt.Arval}</td>
-                                            <td id='ht2'>
-                                            <input type='text'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
-                                            </td>
-                                            <td id='ht2'>
-                                            <input type='text'  name={dt.Rkey} onChange={(e)=> this.handleRChange(e)}/>
-                                            </td>
-                                        </tr>
-                                        
-                                    )
-
-                                        console.log('posts data', posts);
-
-                                        //console.log('id check',this.state.arwval[id],id);
-
-                                        {(
-                                            ()=> {
-
-                                            if(this.state.arwval[id] === true ) {
-                                            console.log('id check',this.state.arwval[id]);
-
-                                            daq.push(
-                                                <Drcod keyid={id} dt={dt} data={this.state} func={this.hideComponent} 
-                                            handleChange={this.handleChange}
-                                            handleRChange={this.handleRChange}/>
-                                            )                                                                               
-                                        } 
-
-                                        return daq;
-
-                                        })
-
-                                        ()}
-                                        posts.push(daq);
-                                        
-                                        //: null}
-
-                                     //)
-
-                                    }
-
-                                    //:null}
-                                        
-                                
-                                        //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
-                                        //console.log('first' ,key,lsum)
-                                    };
-                                    return posts;
-                                }
-                            )
                             
-                            ()}
 
-                         
+                            {dt.key==='A1'?
+                            <>                            
+                                <tr >
+                                    <td id='ht1'>
+                                        <button id='but' name={dt.key} onClick= {()=> this.hideComponent(dt.key)} >
+                                        <Icon iconName="DrillDownSolid" />
+                                        </button>{dt.Arval}</td>
+                                    <td id='ht2'>
+                                    <input type='text'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
+                                    </td>
+                                    <td id='ht2'>
+                                    <input type='text'  name={dt.Rkey} onChange={(e)=> this.handleRChange(e)}/>
+                                    </td>
+                                </tr>
+                                
+                                {this.state.A1 ? 
+                                <>
+                                <Drcod dt={dt} data={this.state} func={this.hideComponent} 
+                                handleChange={this.handleChange}
+                                handleRChange={this.handleRChange}/>
+                                </>
+                                
+                                : null}
+
+                            </>
+
+                            :null}
+
+                            
                             </>
 
                         )
@@ -352,12 +295,10 @@ class OpenInv1 extends Component {
                         {(
                                 ()=> {
                                     let rum = 0;
-                                    for (var id in this.state.arwval) {
+                                    for (var id in this.state.rval) {
                                                                             
-                                        if ('A1' === id) {
-                                            //console.log('norm_arwval', id);
-                                        }
-                                        
+                                        rum = parseFloat(rum) + parseFloat(this.state.rval[id]);
+                                        console.log('norm_rsrum', rum,id);
                                 
                                         //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
                                         //console.log('first' ,key,lsum)

@@ -12,60 +12,62 @@ class Drcod extends Component {
         //console.log(this.props.func);
         return(
         <>
-            {this.props.dt.step1.map((st,id)=> {
+            {this.props.dt.step1.map((st,idval)=> {
             return(
-            <>
-            <tr key={id}>
-                <td><button id='but1' onClick= {()=> this.props.func(st.key)} >
-                    <Icon iconName="DrillDownSolid" />
-                    </button> {st.arr1}</td>
-                <td><input type='text'  name={st.LAD} onChange={(e)=> this.props.handleChange(e)} /></td>
-                <td><input type='text'  name={st.RAD} onChange={(e)=> this.props.handleChange(e)} /></td>
-            </tr>
+                <>
+                {(
+                    ()=> {
+                        let posts = [];
+                        let daq = [];
 
-            {st.key==='A1D1'? 
-            <>
-                {this.props.data.A1D1 ?
-                <>
-                <Recod st={st} data={this.props.data} handleChange={this.props.handleChange}/>
-                </>
-                :null}
-            </>
-            
-            :st.key==='A1D2'?
-            <>
-                {this.props.data.A1D2 ?
-                <>
-                <Recod st={st} data={this.props.data} handleChange={this.props.handleChange}/>
-                </>
-                :null}
-            </>
-            :st.key==='A1D3'?
-            <>
-                {this.props.data.A1D3 ?
-                <>
-                <Recod st={st} data={this.props.data} handleChange={this.props.handleChange}/>
-                </>
-                :null}
-            </>
-            :st.key==='A1D4'?
-            <>
-                {this.props.data.A1D4 ?
-                <>
-                <Recod st={st} data={this.props.data} handleChange={this.props.handleChange}/>
-                </>
-                :null}
-            </>
-            :st.key==='A1D5'?
-            <>
-                {this.props.data.A1D5 ?
-                <>
-                <Recod st={st} data={this.props.data} handleChange={this.props.handleChange}/>
-                </>
-                :null}
-            </>
-            :null
-            }
+                        for (var id in this.props.data.arwval) {
+        
+                            if (st.key=== id) {
+                                posts.push(
+                                    <tr key={idval}>
+                                    <td><button id='but1' onClick= {()=> this.props.func(st.key)} >
+                                        <Icon iconName="DrillDownSolid" />
+                                        </button> {st.arr1}</td>
+                                    <td><input type='text'  name={st.LAD} onChange={(e)=> this.props.handleChange(e)} /></td>
+                                    <td><input type='text'  name={st.RAD} onChange={(e)=> this.props.handleRChange(e)} /></td>
+                                    </tr>
+                            
+                                )
+
+                            console.log('posts data', posts);
+
+                            //console.log('id check',this.props.data.arwval[id],id);
+
+                            {(
+                                ()=> {
+
+                                if(this.props.data.arwval[id] === true ) {
+                                console.log('id check',this.props.data.arwval[id]);
+
+                                daq.push(
+                                    <Recod st={st} data={this.props.data} 
+                                    handleChange={this.props.handleChange}
+                                    handleRChange={this.props.handleRChange}/>
+                                )                                                                               
+                            } 
+
+                            return daq;
+
+                            })
+
+                            ()}
+                            posts.push(daq);
+
+                        }
+
+                        
+                        };
+                        return posts;
+                    }
+                )
+                
+                ()}
+
 
             </>
 

@@ -20,6 +20,19 @@ class OpenInv1 extends Component {
             A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
             A2D1:false,A2D2:false,A2D3:false,
 
+            lval: {
+                LA1:'0',LA2:'0',LA3:'0',
+                LA1D1:'0',LA1D2:'0',LA1D3:'0',LA1D4:'0',LA1D5:'0',
+                LA2D1:'0',LA2D2:'0',LA2D3:'0',
+                L1D1:'0',L1D2:'0',L2D1:'0',L2D2:'0',L2D3:'0',
+                L2D4:'0',L2D5:'0',L2D6:'0',L2D7:'0',L2D8:'0',
+                L2D9:'0',L2D10:'0',L3D1:'0',L4D1:'0',L4D2:'0',
+                L4D3:'0',L4D4:'0',L4D5:'0',L4D6:'0',L4D7:'0',
+                L4D8:'0',L4D9:'0',L4D10:'0',L4D11:'0',L5D1:'0',
+                L5D2:'0',AL1D1:'0',AL2D1:'0',AL2D2:'0',AL2D3:'0',
+                AL2D4:'0',AL2D5:'0',AL3D1:'0',AL3D2:'0',LA3D1:'0'
+            },
+
             LA1:'0',LA2:'0',LA3:'0',
             LA1D1:'0',LA1D2:'0',LA1D3:'0',LA1D4:'0',LA1D5:'0',
             LA2D1:'0',LA2D2:'0',LA2D3:'0',
@@ -44,7 +57,7 @@ class OpenInv1 extends Component {
             ladd:'0.00',radd:'0.00'
         }       
         this.hideComponent = this.hideComponent.bind(this);
-        this.handleLChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         //this.Ladd = this.Ladd.bind(this);
         //this.radd = this.radd.bind(this);
     }
@@ -131,27 +144,35 @@ class OpenInv1 extends Component {
         parseFloat(this.state.AR2D5)+parseFloat(this.state.AR3D1)+parseFloat(this.state.AR3D2)+
         parseFloat(this.state.RA3D1);
 
+        let sample = { a: 1 , b: 2 , c:3 };
+        let summed = 0;
+
+        const vl = ()=> {for (var key in sample) {
+            summed += sample[key];
+        }; }
+
+        //console.log(vl);
+
 
         left_total = left_total.toFixed(2);
         right_total = right_total.toFixed(2);
         //console.log(left_total,right_total);
         return(
             <>
-            <div>
+            <div >
                 <div id='nva'>
-                    <div className='row'>                        
-                        <div className='col-2'>
-                            <div className='col-2' id='hq1'>UBooks</div>
-                        </div>
-                        <div className='col-6'>
-                        <div className='col-6' id='hq2'>
+                    <div className='row' id='nbar1'>                        
+                        
+                        <div className='col-2' id='hq1'>UBooks</div>
+ 
+                        <div id='hq2'>
                         M/S R S CONSTRACTIONS
                         </div>
-                        </div>
+                        
                     </div>
                 </div>
 
-                <div >
+                <div className='container-fluid'>
                 <div className='row '>
                     <div className='col-2' id='da1'>
                         <h6>Dashboard</h6>

@@ -16,7 +16,7 @@ class Recod extends Component {
                     <tr key={id}>
                         <td id='nbut'>{rt.rd}</td>
                         <td><input type='text'  name={rt.DL} onChange={(e)=> this.props.handleChange(e)} /></td>
-                        <td><input type='text'  name={rt.DR} onChange={(e)=> this.props.handleChange(e)} /></td>
+                        <td><input type='text'  name={rt.DR} onChange={(e)=> this.props.handleRChange(e)} /></td>
                         
                     </tr>
                     ) 

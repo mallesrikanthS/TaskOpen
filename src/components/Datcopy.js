@@ -16,7 +16,10 @@ class OpenInv1 extends Component {
     constructor(){
         super()
         this.state= {
-            
+            A1:false,A2:false,A3:false,
+            A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
+            A2D1:false,A2D2:false,A2D3:false,
+
             arwval: {
                 A1:false,A2:false,A3:false,
                 A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
@@ -76,41 +79,7 @@ class OpenInv1 extends Component {
             }
         }; 
        
-
-        if (name=== 'A1'){
-            this.setState({A1: !this.state.A1});
-        }        
-        else if (name==='A2') {
-            this.setState({A2: !this.state.A2});
-        } 
-        else if (name==='A3') {
-            this.setState({A3: !this.state.A3});
-        }
-        else if (name==='A1D1') {
-            this.setState({A1D1: !this.state.A1D1});
-        }
-        else if (name==='A1D2') {
-            this.setState({A1D2: !this.state.A1D2});
-        }
-        else if (name==='A1D3') {
-            this.setState({A1D3: !this.state.A1D3});
-        }
-        else if (name==='A1D4') {
-            this.setState({A1D4: !this.state.A1D4});
-        }
-        else if (name==='A1D5') {
-            this.setState({A1D5: !this.state.A1D5});
-        }
-        else if (name==='A2D1') {
-            this.setState({A2D1: !this.state.A2D1});
-        }
-        else if (name==='A2D2') {
-            this.setState({A2D2: !this.state.A2D2});
-        }
-        else if (name==='A2D3') {
-            this.setState({A2D3: !this.state.A2D3});
-        }
-        console.log('before hidecomp', name, this.state);
+        //console.log('before hidecomp', name, this.state);
     }
 
    /* handcredit = ()=> {
@@ -165,7 +134,7 @@ class OpenInv1 extends Component {
 
     render(){
         //console.log(taskdata.Arrow1);
-        console.log('after hidecomp', this.state);
+        //console.log('after hidecomp', this.state);
 
         //let sample = { a: 1 , b: 2 , c:3 };
         let lsum = 0;
@@ -256,6 +225,7 @@ class OpenInv1 extends Component {
                                 ()=> {
                                     let posts = [];
                                     let daq = [];
+                                    let laq = [];
 
                                     for (var id in this.state.arwval) {
                     
@@ -273,25 +243,63 @@ class OpenInv1 extends Component {
                                             <input type='text'  name={dt.Rkey} onChange={(e)=> this.handleRChange(e)}/>
                                             </td>
                                         </tr>
-                                        
-                                    )
+                                    )                                        
+                                    
 
-                                        console.log('posts data', posts);
-
+                                        //console.log('posts data', posts);
                                         //console.log('id check',this.state.arwval[id],id);
 
                                         {(
                                             ()=> {
-
+                    
                                             if(this.state.arwval[id] === true ) {
-                                            console.log('id check',this.state.arwval[id]);
+                                            //console.log('id check',this.state.arwval[id]);
+                                            
+                                            //daq.push(<>
 
-                                            daq.push(
-                                                <Drcod keyid={id} dt={dt} data={this.state} func={this.hideComponent} 
-                                            handleChange={this.handleChange}
-                                            handleRChange={this.handleRChange}/>
-                                            )                                                                               
-                                        } 
+                                                {dt.step1.map((st,idval)=> {
+                                                    daq.push(
+                                                    <>
+                                                        
+                                                        <tr key={idval}>
+                                                        <td><button id='but1' onClick= {()=> this.hideComponent(st.key)} >
+                                                            <Icon iconName="DrillDownSolid" />
+                                                            </button> {st.arr1}</td>
+                                                        <td><input type='text'  name={st.LAD} onChange={(e)=> this.handleChange(e)} /></td>
+                                                        <td><input type='text'  name={st.RAD} onChange={(e)=> this.handleRChange(e)} /></td>
+                                                        </tr>
+                                                        //)                                                                                              
+                                                        {(
+                                                            ()=> {
+                                                                
+                                                                console.log('keyid', id, st.key);
+                                                
+                                                                if (st.key=== id) {
+                                                                    console.log('keyid', id);
+                                                                    
+                                                                    if(this.state.arwval[id] === true ) {
+                                                                        console.log('id check',this.state.arwval[id]);
+                                        
+                                                                        laq.push(
+                                                                            <Recod st={st} data={this.state} 
+                                                                            handleChange={this.handleChange}
+                                                                            handleRChange={this.handleRChange}/>
+                                                                        )                                                                              
+                                                                    }
+                                                                }
+                                                                return laq;                                                                       
+                                                            })
+                                                            
+                                                            ()}
+                                                    </>)
+                                                            daq.push(laq);
+                                        
+                                                    
+                                                    }
+                                                    )}
+                                                //</>)
+                                                                                                                       
+                                            } 
 
                                         return daq;
 
@@ -305,15 +313,10 @@ class OpenInv1 extends Component {
                                      //)
 
                                     }
-
-                                    //:null}
-                                        
-                                
-                                        //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
-                                        //console.log('first' ,key,lsum)
-                                    };
-                                    return posts;
-                                }
+                                    
+                                };
+                                return posts;
+                              }
                             )
                             
                             ()}
