@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### In OpenInv1.js file Main Code for required Page is there...
+### In Dat.js file Main Code for required Page is there...
 
-## Main Files are OpenInv1 // Drcod // Drcod1 // Drcod2 // Recod //>>  taskdata.json   // App.css  Finally App.js
+## Main Files are Dat.js // Drcod.js Recod //>>  taskdata.json   // App.css  Mainly check App.js
 
 ### `npm start`
 
