@@ -20,7 +20,8 @@ class OpenInv1 extends Component {
             arwval: {
                 A1:false,A2:false,A3:false,
                 A1D1:false,A1D2:false,A1D3:false,A1D4:false,A1D5:false,
-                A2D1:false,A2D2:false,A2D3:false
+                A2D1:false,A2D2:false,A2D3:false,
+                A3D1:false
             },
 
             lval: {
