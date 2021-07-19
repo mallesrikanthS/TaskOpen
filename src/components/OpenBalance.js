@@ -239,10 +239,10 @@ class OpenBalance extends Component {
                                                 <Icon iconName="DrillDownSolid" />
                                                 </button>{dt.Arval}</td>
                                             <td id='ht2'>
-                                            <input type='text'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
+                                            <input type='number'  name={dt.Lkey} onChange={(e)=> this.handleChange(e)}/>
                                             </td>
                                             <td id='ht2'>
-                                            <input type='text'  name={dt.Rkey} onChange={(e)=> this.handleRChange(e)}/>
+                                            <input type='number'  name={dt.Rkey} onChange={(e)=> this.handleRChange(e)}/>
                                             </td>
                                             </tr>
                                             </tbody>
