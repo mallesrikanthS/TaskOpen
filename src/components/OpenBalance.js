@@ -51,7 +51,8 @@ class OpenBalance extends Component {
         this.hideComponent = this.hideComponent.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleRChange = this.handleRChange.bind(this);
-        //this.handcredit = this.handcredit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handcredit = this.handcredit.bind(this);
     }
 
     hideComponent = (name)=> {
@@ -73,22 +74,41 @@ class OpenBalance extends Component {
        
     }
 
-   /* handcredit = ()=> {
+    handcredit = (name)=> {
         let rs = 0;
-        for (var id in this.state.rval) {
-            if(this.state.rval[id] === ''){    
-                rs = parseFloat(rs) + 0;
-                //console.log('null_rsum', rsum);
-            }
-            else {
-                rs = parseFloat(rs) + parseFloat(this.state.rval[id]);
-                console.log('norm_rs', rs);
-            }
-            //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
-            //console.log('first' ,key,lsum)
-        }; 
+        //const rv = rval;
+        //console.log(name);
+        if (name === 'rval'){
+            for (var id in this.state.rval) {
+                if(this.state.rval[id] === ''){    
+                    rs = parseFloat(rs) + 0;
+                    //console.log('null_rsum', rsum);
+                }
+                else {
+                    rs = parseFloat(rs) + parseFloat(this.state.rval[id]);
+                    //console.log(' id, rval, norm_rs', id, this.state.rval[id], rs);
+                }
+                //lsum = parseFloat(lsum) + parseFloat(this.state.lval[key]);
+                //console.log('first' ,key,lsum)
+            }; 
+        }
+        else if (name === 'lval') {
+            for (var idx in this.state.lval) {
+                if(this.state.lval[idx] === ''){    
+                    rs = parseFloat(rs) + 0;
+                    //console.log('null_rsum', rsum);
+                }
+                else {
+                    rs = parseFloat(rs) + parseFloat(this.state.lval[idx]);
+                    //console.log(' idx, lval, norm_rs', idx, this.state.lval[idx], rs);
+                }
+                //lsum = parseFloat(lsum) + parseFloat(this.state.lval[idx]);
+                //console.log('first' ,key,lsum)
+            }; 
+        }        
+        //console.log(rval,rv);
         return rs;
-    } */
+    } 
 
     handleChange = (e)=> {
         //console.log(e.target.name);
@@ -118,14 +138,17 @@ class OpenBalance extends Component {
           }))
     }
 
+    handleSubmit = (e)=> {
+        e.preventDefault()
+        const data = this.state
+        console.log('data for json',data)
+    }
 
     render(){
         //console.log(taskdata.Arrow1);
         //console.log('after hidecomp', this.state);
 
-        let lsum = 0;
-        let rsum = 0;
-
+      /*  let lsum, rsum = 0, 0;        
         for (var key in this.state.lval) {
             if(this.state.lval[key] === ''){    
                 lsum = parseFloat(lsum) + 0;
@@ -136,7 +159,6 @@ class OpenBalance extends Component {
                 //console.log('norm_sum', lsum);
             }
         };
-
         // Credit - total
         for (var id in this.state.rval) {
             if(this.state.rval[id] === ''){    
@@ -148,10 +170,10 @@ class OpenBalance extends Component {
                // console.log('norm_rsum', rsum);
             }
         }; 
-
         let left_total = lsum.toFixed(2);
         let right_total = rsum.toFixed(2);
-        //console.log(left_total,right_total);
+        //console.log(left_total,right_total); 
+        */
 
         return(
             <>
@@ -269,12 +291,14 @@ class OpenBalance extends Component {
 
                     <div >
                         <div className='row'>
-                        <div className='col-4'></div>
+                        <div className='col-4'>
+                        
+                        </div>
                         <div className='' id='tb'>
-                            <span> Total Debit Amount : {left_total}</span>
+                            <span> Total Debit Amount : {this.handcredit('lval')} </span>
                         </div>
                         <div className='' id='tc'>
-                            <span> Total Credit Amount : {right_total}</span>
+                            <span> Total Credit Amount : {this.handcredit('rval')} </span>
                         </div>
                         </div>
                         
@@ -282,7 +306,7 @@ class OpenBalance extends Component {
 
                     <div>
                         <div>
-                            <button id='iss'><Icon class='iss' iconName="Lifesaver" />Save</button>                                                        
+                            <button onClick = {this.handleSubmit} id='iss'><Icon class='iss' iconName="Lifesaver" />Save</button>                                                        
                         </div>                        
                     </div>
                 </div>
